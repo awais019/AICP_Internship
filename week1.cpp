@@ -233,15 +233,20 @@ int main()
 
     cout << "Total price: $" << totalPrice << endl;
 
+    double savedMoney = 0.0;
+
     if (additionalItems.size() == 1)
     {
-        totalPrice -= totalPrice * 0.05;
+        savedMoney = totalPrice * 0.05;
+        totalPrice -= savedMoney;
     }
     else if (additionalItems.size() >= 2)
     {
-        totalPrice -= totalPrice * 0.1;
+        savedMoney = totalPrice * 0.1;
+        totalPrice -= savedMoney;
     }
 
+    cout << "You saved $" << savedMoney << endl;
     cout << "Total price after discount: $" << totalPrice << endl;
 
     return 0;
